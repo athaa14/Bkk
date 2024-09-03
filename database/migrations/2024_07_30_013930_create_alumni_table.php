@@ -14,12 +14,13 @@ return new class extends Migration
     {
         Schema::create('alumni', function (Blueprint $table) {
             $table->string('nik')->primary();
+            $table->string('username');
             $table->string('nama_lengkap');
             $table->enum('jurusan', ['AKL','BR','DKV','MLOG','MP','RPL','TKJ']);
             $table->enum('jenis_kelamin', ['Laki Laki','Perempuan']);
             $table->year('tahun_lulus');
             $table->text('alamat')->nullable();
-            $table->varchar('no_telepon')->nullable();
+            $table->string('no_telepon')->nullable();
             $table->text('keahlian')->nullable();
             $table->string('foto')->nullable();
             $table->text('deskripsi')->nullable();

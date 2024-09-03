@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['Admin', 'Perusahaan', 'Alumni']);
+            $table->enum('role', ['Admin BKK', 'Perusahaan', 'Alumni']);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

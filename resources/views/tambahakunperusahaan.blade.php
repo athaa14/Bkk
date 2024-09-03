@@ -40,16 +40,16 @@
                                     @csrf
                                     <div class="row g-3">
                                         <div class="mb-3 col-md-6">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input class="form-control" type="email" id="email" name="email" placeholder="Email" autofocus required />
+                                            <label for="username" class="form-label">Email</label>
+                                            <input class="form-control" type="username" id="username" name="username" placeholder="Email" autofocus required />
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="password" class="form-label">Password</label>
                                             <input class="form-control" type="password" id="password" name="password" placeholder="Passwrod" required />
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label for="nama" class="form-label">Nama</label>
-                                            <input class="form-control" type="text" id="nama" name="nama" placeholder="Nama" required />
+                                            <label for="nama_perusahaan" class="form-label">Nama</label>
+                                            <input class="form-control" type="text" id="nama_perusahaan" name="nama_perusahaan" placeholder="Nama" required />
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="alamat" class="form-label">Alamat</label>
@@ -57,7 +57,13 @@
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="bidang_usaha" class="form-label">Bidang Usaha</label>
-                                            <input class="form-control" type="text" id="bidang_usaha" name="bidang_usaha" placeholder="Bidang Usaha" required />
+                                            <select name="bidang_usaha" id="bidang_usaha" class="form-select">
+                                                <option value="seni dan ekonomi kreatif">Seni dan Ekonomi Kreatif</option>
+                                                <option value="bisnis dan manajemen">Bisnis dan Manajemen</option>
+                                                <option value="teknologi informasi">Teknologi Informasi</option>
+                                                <option value="pemasaran dan marketing">Pemasaran dan Marketing</option>
+                                                <option value="logistik">Logistik</option>
+                                            </select>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="no_telepon" class="form-label">No Telepon</label>

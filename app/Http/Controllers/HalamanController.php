@@ -18,11 +18,11 @@ class HalamanController extends Controller
                 return view('admin');
             } else if ($role === 'Perusahaan') {
                 $perusahaan = Perusahaan::all();
-                return view('perusahaan');
+                return view('DashboardPerusahaan');
             } else if ($role === 'Alumni') {
                 $alumni = Alumni::all();
-                $alumniLogin = Alumni::where('username', Auth::nik())->first();
-                return view('alumni', compact(['alumni', 'alumniLogin']));
+                $alumniLogin = Alumni::where('username', Auth::user()->username)->first();
+                return view('DashboardAlumni', compact(['alumni', 'alumniLogin']));
             }
         }
         // return view('login');

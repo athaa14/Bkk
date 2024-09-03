@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="pages/icons/mdi.html">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -64,31 +65,42 @@
           <div class="card">
             <div class="card-body">
               <p class="card-title text-center">Grafik Alumni</p>
-              <p class="text-muted text-center">25% more traffic than previous week</p>
-              <div class="row mb-3">
-                <div class="col-md-12">
-                  <div class="d-flex justify-content-between traffic-status ">
-
-                    <div class="item">
-                      <p class="mb-3">Bekerja</p>
-                      <h5 class="font-weight-bold mb-0">93,956</h5>
-                      <div class="color-border"></div>
-                    </div>
-                    <div class="item">
-                      <p class="mb-3">Pendidikan</p>
-                      <h5 class="font-weight-bold mb-0">58,605</h5>
-                      <div class="color-border"></div>
-                    </div>
-                    <div class="item">
-                      <p class="mb-3">Berwirausaha</p>
-                      <h5 class="font-weight-bold mb-0">78,254</h5>
-                      <div class="color-border"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <canvas id="audience-chart"></canvas>
-            </div>
+              <p class="text-muted text-center">{{ $alumniStatus->total }} alumni, {{ $alumniStatus->bekerja }} bekerja, {{ $alumniStatus->tidak_bekerja }} tidak bekerja</p>
+              <canvas id="alumniChart"></canvas>
+          </div>
+          
+          <script>
+              var ctx = document.getElementById('alumniChart').getContext('2d');
+              var alumniChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: [
+                          @foreach($alumniByCompany as $company)
+                              '{{ $company->perusahaan }}',
+                          @endforeach
+                      ],
+                      datasets: [{
+                          label: 'Jumlah Alumni Bekerja',
+                          data: [
+                              @foreach($alumniByCompany as $company)
+                                  {{ $company->total }},
+                              @endforeach
+                          ],
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true
+                          }
+                      }
+                  }
+              });
+          </script>
+          
           </div>
 
           <div class="">

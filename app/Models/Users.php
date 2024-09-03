@@ -15,13 +15,18 @@ class Users extends Authenticatable
     protected $table = 'users';
     protected $fillable = ['username','password','role'];
     public $timestamps = false;
-    public $update_at = false;
+    // public $update_at = false;
 
     public function aktivitas () : HasMany {
         return $this->hasMany(Aktivitas::class);
     }
 
     public function perusahaan() : HasOne {
-        return $this->hasOne(Perusahaan::class);
+        return $this->hasOne(Perusahaan::class, 'username');
     }
+    
+    public function alumni() : HasOne {
+        return $this->hasOne(Alumni::class);
+    }
+
 }

@@ -16,7 +16,7 @@
         height="80px"
       />
       <li class="nav-item">
-        <a class="nav-link" href="alumni">
+        <a class="nav-link" href="DashboardAlumni">
           <i class="mdi mdi-view-quilt menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>

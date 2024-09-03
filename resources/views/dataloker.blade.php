@@ -139,7 +139,7 @@
           </div> 
         
         <!-- row end -->
-        <div class="row">
+        {{-- <div class="row">
           <div class="col-md-4 grid-margin stretch-card">
             <div class="card bg-facebook d-flex align-items-center">
               <div class="card-body py-5">
@@ -180,7 +180,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
         <footer class="footer">
           <div class="card">
             <div class="card-body">

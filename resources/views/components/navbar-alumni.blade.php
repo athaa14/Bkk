@@ -7,7 +7,7 @@
       <a class="navbar-brand brand-logo" href="index.html"><img src="images/11_1_-removebg-preview.png" width="45px" alt="logo" /></a>
       <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/" alt="logo" /></a>
     </div>
-    <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, {{$alumniLogin->nama}}</h4>
+    {{-- <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, {{$alumniLogin->nama_lengkap}}</h4> --}}
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item">
         <h4 class="mb-0 font-weight-bold d-none d-xl-block">Mar 12, 2019 - Apr 10, 2019</h4>
@@ -128,7 +128,7 @@
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
           <img src="images/faces/face5.jpg" alt="profile" />
-          <span class="nav-profile-name">{{Auth::user()->email}}</span>
+          <span class="nav-profile-name">{{Auth::user()->nama}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <a href="#" class="dropdown-item">

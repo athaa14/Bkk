@@ -23,18 +23,18 @@ class AlumniImport implements ToModel, WithHeadingRow
 
     public function model(array $row)
     {
-        $user = User::create([
-            'email' => $row['email'],
+        $user = Users::create([
+            'username' => $row['username'],
             'password' => bcrypt($row['password']),
             'role' => 'Alumni'
         ]);
 
         return new Alumni([
+            'username'   => $user->username,
             'nik'     => $row['nik'], // Gunakan nama header sesuai dengan file Excel
-            'id_user'   => $user->id,
-            'nama'    => $row['nama_lengkap'],
+            'nama_lengkap'    => $row['nama_lengkap'],
             'jurusan'   => $row['jurusan'],
-            // 'jenis_kelamin' => $row['jenis_kelamin'],
+            'jenis_kelamin' => $row['jenis_kelamin'],
             'tahun_lulus'   => $row['tahun_lulus'],
         ]);
     }

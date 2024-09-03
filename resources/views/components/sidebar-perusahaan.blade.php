@@ -16,7 +16,7 @@
       height="80px"
     />
       <li class="nav-item">
-        <a class="nav-link collaapsed" id="dropdownMenuButton1" href="perusahaan">
+        <a class="nav-link collaapsed" id="dropdownMenuButton1" href="DashboardPerusahaan">
           <i class="mdi mdi-view-quilt menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -31,6 +31,12 @@
         <a class="nav-link" href="datalamaran1">
           <i class="mdi mdi-file-document-box-outline menu-icon"></i>
           <span class="menu-title">Data Lamaran</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="profilePerusahaan">
+          <i class="mdi mdi-account-outline menu-icon"></i>
+          <span class="menu-title">Profile Perusahaan</span>
         </a>
       </li>
     </ul>

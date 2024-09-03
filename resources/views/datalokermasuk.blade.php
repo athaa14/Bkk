@@ -32,7 +32,7 @@
         <h6 class="mt-2 mb-4" style="color: #4C4C4C;"></h6>
         <div class="content-wrapper">
           <div class="">
-            <form class="row g-3 needs-validation" novalidate>
+            {{-- <form class="row g-3 needs-validation" novalidate>
               <div class="col-md-3 mb-3">
                 <label for="validationCustom01" class="form-label">Nama</label>
                 <input type="text" class="form-control rounded-input" id="validationCustom01" value="Search Name" required>
@@ -57,17 +57,8 @@
                 <button type="button" class="btn btn-primary btn-lg" onclick="searchAlumni()">Search</button>
               </div>
               <div class="col-md-6 mb-3">
-                <button type="button" class="btn btn-danger btn-icon-text" onclick="exportData()">Eksport
-                  <i class="mdi mdi-file-check btn-icon-prepend"></i>
-                </button>
-                <a href="tambahloker.html" type="button" class="btn btn-warning btn-icon-text" onclick="importData()">Tambah
-                  <i class="mdi mdi-launch btn-icon-prepend"></i>
-                </a>
-                <a href="datalokermasuk" type="button" class="btn btn-primary btn-icon-text" onclick="importData()">Data Masuk
-                  <i class=""></i>
-                  </a>
             </div>
-            </form>
+            </form> --}}
           </div>
           <div class="row ">
             <div class="col-lg-12 grid-margin stretch-card">
@@ -97,7 +88,7 @@
                             Manager
                           </td>
                           <td>
-                            IT
+                            Pemasaran
                           </td>
                           <td>
                             Lorem Ipsum
@@ -126,7 +117,7 @@
                             Manager
                           </td>
                           <td>
-                            IT
+                            Bisnis
                           </td>
                           <td>
                             Lorem Ipsum

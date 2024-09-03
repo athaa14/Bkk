@@ -13,7 +13,7 @@ class Lamaran extends Model
     protected $fillable = ['id_lamaran','id_lowongan_pekerjaan','nik','status'];
 
     public function loker () : BelongsTo {
-        return $this->belongsTo(Loker::class);
+        return $this->belongsTo(LowonganPekerjaan::class);
     }
 
     public function alumni () : BelongsTo {

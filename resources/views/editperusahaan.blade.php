@@ -36,25 +36,25 @@
                             <h5 class="card-header">Edit Perusahaan</h5>
                             <!-- Account -->
                             <div class="card-body">
-                                <form method="POST" action="{{ route('perusahaan.update', $perusahaan->id) }}">
+                                <form method="POST" action="{{ route('perusahaan.update', $data_perusahaan->id_perusahaan) }}">
                                     @csrf
                                     @method('PUT')
                                     <div class="row g-3">
                                         <div class="mb-3 col-md-6">
-                                            <label for="nis" class="form-label">Nama Perusahaan</label>
-                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $perusahaan->nama }}" required>
+                                            <label for="nama_perusahaan" class="form-label">Nama Perusahaan</label>
+                                            <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" value="{{ $data_perusahaan->nama_perusahaan    }}" required>
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label for="nama" class="form-label">Bidang Usaha</label>
-                                            <input type="text" class="form-control" id="bidang_usaha" name="bidang_usaha" value="{{ $perusahaan->bidang_usaha }}" required>
+                                            <label for="bidang_usaha" class="form-label">Bidang Usaha</label>
+                                            <input type="text" class="form-control" id="bidang_usaha" name="bidang_usaha" value="{{ $data_perusahaan->bidang_usaha }}" required>
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label for="jurusan" class="form-label">No Telepon</label>
-                                            <input type="text" class="form-control" id="no_telepon" name="no_telepon" value="{{ $perusahaan->no_telepon }}" required>
+                                            <label for="no_telepon" class="form-label">No Telepon</label>
+                                            <input type="text" class="form-control" id="no_telepon" name="no_telepon" value="{{ $data_perusahaan->no_telepon }}" required>
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label for="tahun_lulus" class="form-label">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ $perusahaan->alamat }}" required>
+                                            <label for="alamat" class="form-label">Alamat</label>
+                                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ $data_perusahaan->alamat }}" required>
                                         </div>
                                     </div>
                                     <div class="mt-2">

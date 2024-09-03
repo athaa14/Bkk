@@ -21,6 +21,7 @@ class UsersController extends Controller
         $file = $request->file('file');
 
         Excel::import(new AlumniImport, $file);
+        return redirect()->route('/alumni')->with('success', 'Data Alumni Berhasil ditambahkan');
 
         return response()->json(['message' => 'File imported successfully!']);
     }

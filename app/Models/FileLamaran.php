@@ -13,7 +13,7 @@ class FileLamaran extends Model
     protected $fillable = ['id_lamaran','nama_file'];
 
     public function loker () : BelongsTo {
-        return $this->belongsTo(Loker::class);
+        return $this->belongsTo(LowonganPekerjaan::class);
     }
 
     public function alumni () : BelongsTo {

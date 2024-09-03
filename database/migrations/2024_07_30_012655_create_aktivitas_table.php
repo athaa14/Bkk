@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('aktivitas', function (Blueprint $table) {
             $table->string('id_aktivitas_user')->primary();
-            $table->varchar('username');
+            $table->string('username');
             $table->date('tanggal');
             $table->string('keterangan');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('username')->references('username')->on('users')->onDelete('cascade');
         });
     }
 

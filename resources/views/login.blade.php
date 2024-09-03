@@ -71,7 +71,7 @@
                                           <i class="mdi mdi-account-outline text-primary"></i>
                                       </span>
                                   </div>
-                                  <input id="username" type="email" class="form-control form-control-lg border-left-0 @error('email') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                  <input id="username" type="text" class="form-control form-control-lg border-left-0 @error('email') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                                   @error('email')
                                       <span class="invalid-feedback" role="alert">
                                           <strong>{{ $message }}</strong>

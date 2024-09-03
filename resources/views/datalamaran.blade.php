@@ -59,9 +59,9 @@
                 <button type="button" class="btn btn-danger btn-icon-text" onclick="exportData()">Export
                   <i class="mdi mdi-file-check btn-icon-prepend"></i>
                 </button>
-                <a href="datalamaranmasuk" type="button" class="btn btn-primary btn-icon-text" onclick="importData()">Data Masuk
+                {{-- <a href="datalamaranmasuk" type="button" class="btn btn-primary btn-icon-text" onclick="importData()">Data Masuk
                   <i class=""></i>
-                  </a>
+                  </a> --}}
             </form>
           </div>
           <div class="row ">

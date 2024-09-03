@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pendidikan', function (Blueprint $table) {
             $table->string('id_riwayat_pendidikan')->primary();
-            $table->unsignedBigInteger('id_alumni');
+            $table->string('nik');
             $table->string('nama_universitas');
             $table->text('alamat');
             $table->string('gelar')->nullable();
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('id_alumni')->references('id')->on('alumni')->onDelete('cascade');
+            $table->foreign('nik')->references('nik')->on('alumni')->onDelete('cascade');
         });
     }
 

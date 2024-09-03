@@ -36,16 +36,20 @@
                             <h5 class="card-header">Tambah info loker</h5>
                             <!-- Account -->
                             <div class="card-body">
-                                <form id="formAccountSettings" method="POST" onsubmit="return false">
+                                <form id="formAccountSettings" method="POST" action="{{ route('perusahaan.tambahloker') }}" onsubmit="return validateForm()">
+                                    @csrf
+                                    <input type="hidden" name="username" value="{{ Auth::user()->username }}">
                                     <div class="row g-3">
+                                        <!-- Field untuk jabatan pekerjaan -->
                                         <div class="mb-3 col-md-12">
                                             <label for="jabatan_pekerjaan" class="form-label">Jabatan Pekerjaan</label>
                                             <input class="form-control" type="text" id="jabatan_pekerjaan" name="jabatan_pekerjaan"
-                                                placeholder="Jabatan pekerjaan" autofocus />
+                                                placeholder="Jabatan pekerjaan" autofocus required/>
                                         </div>
+                                        <!-- Field untuk jenis waktu pekerjaan -->
                                         <div class="mb-3 col-md-6">
-                                            <label for="jenis_waktu_pekerjaan" class="form-label">Jenis waktu pekerjaan</label>
-                                            <select class="form-control" id="jenis_waktu_pekerjaan" name="jenis_waktu_pekerjaan">
+                                            <label for="jenis_waktu_pekerjaan" class="form-label">Jenis Waktu Pekerjaan</label>
+                                            <select class="form-control" id="jenis_waktu_pekerjaan" name="jenis_waktu_pekerjaan" required>
                                                 <option value="">Pilih Jenis Waktu Pekerjaan</option>
                                                 <option value="fulltime">Waktu Kerja Standar (Full-Time)</option>
                                                 <option value="parttime">Waktu Kerja Paruh Waktu (Part-Time)</option>
@@ -54,63 +58,29 @@
                                                 <option value="rotating-shift">Waktu Kerja Bergilir (Rotating Shift)</option>
                                                 <option value="remote-work">Waktu Kerja Jarak Jauh (Remote Work)</option>
                                                 <option value="contract-work">Waktu Kerja Kontrak (Contract Work)</option>
-                                                <option value="project-basedwork">Waktu Kerja Proyek(Project-Based work)</option>
-                                                <option value="irreguler-hours">Waktu Kerja Tidak Teratur (Irreguler Hours)</option>
+                                                <option value="project-basedwork">Waktu Kerja Proyek (Project-Based work)</option>
+                                                <option value="irreguler-hours">Waktu Kerja Tidak Teratur (Irregular Hours)</option>
                                                 <option value="temporary-work">Waktu Kerja Sementara (Temporary Work)</option>
-                                                <!-- Add other options as necessary -->
                                             </select>
                                         </div>
+                                        <!-- Field untuk tanggal akhir -->
                                         <div class="mb-3 col-md-6">
-                                            <label for="alamat_lengkap" class="form-label">Alamat Lengkap</label>
-                                            <input type="text" class="form-control" id="alamat_lengkap" name="alamat_lengkap"
-                                                placeholder="Alamat Lengkap" />
+                                            <label for="tanggal_akhir" class="form-label">Tanggal Akhir</label>
+                                            <input type="date" class="form-control" id="tanggal_akhir" name="tanggal_akhir"
+                                                placeholder="Date" required/>
                                         </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="provinsi" class="form-label">Provinsi</label>
-                                            <input type="text" class="form-control" id="provinsi" name="provinsi"
-                                            placeholder="Masukkan Provinsi" />
-                                            {{-- <select class="form-control" id="provinsi" name="provinsi">
-                                                <option value="">Pilih Provinsi</option>
-                                                <!-- Add all provinces in Indonesia here -->
-                                            </select> --}}
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="kota" class="form-label">Kota/Kabupaten</label>
-                                            <input type="text" class="form-control" id="kota" name="kota"
-                                            placeholder="Masukkan Kota/Provinsi" />
-                                            {{-- <select class="form-control" id="kota" name="kota" disabled>
-                                                <option value="">Pilih Kota/Kabupaten</option>
-                                                <!-- Options will be populated dynamically based on selected province -->
-                                            </select> --}}
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="kecamatan" class="form-label">Kecamatan</label>
-                                            <input type="text" class="form-control" id="kecamatan" name="kecamatan"
-                                            placeholder="Masukkan Kecamatan" />
-                                            {{-- <select class="form-control" id="kecamatan" name="kecamatan" disabled>
-                                                <option value="">Pilih Kecamatan</option>
-                                                <!-- Options will be populated dynamically based on selected kota/kabupaten -->
-                                            </select> --}}
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="kelurahan" class="form-label">Kelurahan</label>
-                                            <input type="text" class="form-control" id="kelurahan" name="kelurahan"
-                                            placeholder="Masukkan Kelurahan" />
-                                            {{-- <select class="form-control" id="kelurahan" name="kelurahan" disabled>
-                                                <option value="">Pilih Kelurahan</option>
-                                                <!-- Options will be populated dynamically based on selected kecamatan -->
-                                            </select> --}}
-                                        </div>
+                                        <!-- Field untuk deskripsi -->
                                         <div class="mb-3 col-md-12">
                                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi"></textarea>
+                                            <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi" required></textarea>
                                         </div>
                                     </div>
                                     <div class="mt-2">
-                                        <a href="dataloker1" type="submit" class="btn btn-primary me-2">Ajukan</a>
+                                        <button type="submit" class="btn btn-primary me-2">Ajukan</button>
                                     </div>
                                 </form>
-                            </div>               
+                                
+                            </div>       
                             <!-- /Account -->
                         </div>
                         

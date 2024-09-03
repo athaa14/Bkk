@@ -15,14 +15,14 @@ return new class extends Migration
             $table->string('id_perusahaan')->primary();
             $table->string('username');
             $table->string('nama_perusahaan');
-            $table->string('bidang_usaha');
+            $table->enum('bidang_usaha', ['Seni dan Ekonomi Kreatif', 'Bisnis dan Manajemen', 'Teknologi Informasi', 'Pemasaran dan Marketing','Logistik']);
             $table->string('no_telepon');
             $table->text('alamat');
             $table->string('logo')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('username')->references('username')->on('users')->onDelete('cascade');
+            $table->foreign('username')->references('username')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

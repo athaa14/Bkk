@@ -18,7 +18,7 @@ class PenggunaSeeder extends Seeder
         Users::create([
             'username' => 'gultom@mail.com',
             'password' => Hash::make('gultom123'),
-            'role' => 'AdminBKK',
+            'role' => 'Admin BKK',
         ]);
         Users::create([
             'username' => 'forit@mail.com',
@@ -26,7 +26,7 @@ class PenggunaSeeder extends Seeder
             'role' => 'Perusahaan',
         ]);
         Users::create([
-            'username' => 'rasyad@mail.com',
+            'username' => '3271045678901234',
             'password' => Hash::make('rasyad123'),
             'role' => 'Alumni',
         ]);

@@ -22,12 +22,12 @@
 <body>
   <div class="container-scroller d-flex">
     <!-- partial:./partials/_sidebar.html -->
-    <x-sidebar-alumni/>
+    <x-sidebar-perusahaan/>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:./partials/_navbar.html -->
-      {{-- <x-navbar-alumni/> --}}
-      @include('components.navbar-alumni')
+      <x-navbar-perusahaan/>
+      {{-- @include('components.navbar-alumni') --}}
       <!-- partial -->
       <div class="main-panel">
         <h6 class="mt-2 mb-4" style="color: #4C4C4C;"></h6>
@@ -61,34 +61,34 @@
                       <form id="formAccountSettings" method="POST" onsubmit="return false">
                           <div class="row g-3 ">
                               <div class="mb-3 col-md-6">
-                                  <label for="nama" class="form-label" >Nama</label>
-                                  <input class="form-control" type="text" id="nama" name="nama"
-                                      value="{{$alumniLogin->nama_lengkap}}" autofocus />
+                                  <label for="username" class="form-label" >Username</label>
+                                  <input class="form-control" type="text" id="username" name="username"
+                                      value="{{$perusahaanLogin->username}}" autofocus />
                               </div>
                               <div class="mb-3 col-md-6">
-                                  <label for="tahun_lulus" class="form-label">Tahun Lulus</label>
+                                  <label for="nama_perusahaan" class="form-label">Nama Perusahaan</label>
                                   <input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus"
-                                      placeholder="" maxlength="6" value="{{$alumniLogin->tahun_lulus}}" />
+                                      placeholder="" maxlength="6" value="{{$perusahaanLogin->nama_perusahaan}}" />
                               </div>
                               <div class="mb-3 col-md-6">
-                                  <label for="jurusan" class="form-label">Jurusan</label>
-                                  <input class="form-control" type="text" name="jurusan" id="jurusan"
-                                      value="{{$alumniLogin->jurusan}}" />
+                                  <label for="bidang_usaha" class="form-label">Bidang Usaha</label>
+                                  <input class="form-control" type="text" name="bidang_usaha" id="bidang_usaha"
+                                      value="{{$perusahaanLogin->bidang_usaha}}" />
                               </div>
                               <div class="mb-3 col-md-6">
-                                  <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                                  <input class="form-control" type="text" name="jenis_kelamin" id="jenis_kelamin"
-                                      value="{{$alumniLogin->jenis_kelamin}}" />
+                                  <label for="no_telepon" class="form-label">No Telepon</label>
+                                  <input class="form-control" type="text" name="no_telepon" id="no_telepon"
+                                      value="{{$perusahaanLogin->jenis_kelamin}}" />
                               </div>
                               <div class="mb-3 col-md-6">
-                                  <label for="email" class="form-label">Email</label>
-                                  <input class="form-control" type="text" name="email" id="email"
-                                      value="" />
+                                  <label for="alamat" class="form-label">Alamat</label>
+                                  <input class="form-control" type="text" name="alamat" id="alamat"
+                                      value="{{$perusahaanLogin->alamat}}" />
                               </div>
                               <div class="mb-3 col-md-6">
                                   <label for="alamat" class="form-label">Alamat Lengkap</label>
                                   <input class="form-control" type="text" id="alamat" name="alamat"
-                                      value="{{$alumniLogin->alamat}}" placeholder="" />
+                                      {{-- value="{{$alumniLogin->alamat}}" placeholder="" /> --}}
                               </div>
                               <div class="mb-3 col-md-6">
                                   <label for="provinsi" class="form-label">Provinsi</label>

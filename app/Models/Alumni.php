@@ -10,22 +10,26 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Alumni extends Model
 {
     use HasFactory;     
-    protected $table = 'data_alumni';
-    protected $fillable = ['nik','username','nama','jurusan','jenis_kelamin','tahun_lulus','alamat','kontak','keahlian','foto','deskripsi'];
+    protected $table = 'alumni';
+    protected $fillable = ['nik','username','nama_lengkap','jurusan','jenis_kelamin','tahun_lulus','alamat','kontak','keahlian','foto','deskripsi'];
+    public $timestamps = false;
+    // public $update_at = false;
+    public $incrementing = false;
+    protected $primaryKey = 'nik';
 
     public function pengguna () : BelongsTo {
-        return $this->belongsTo(Users::class);  
+        return $this->belongsTo(Users::class, 'username');  
     }
 
     public function lamaran () : HasMany {
-        return $this->hasMany(Lamaran::class);
+        return $this->hasMany(Lamaran::class, 'nik');
     }
 
     public function pendidikan () : HasMany {
-        return $this->hasMany(pendidikan::class);
+        return $this->hasMany(pendidikan::class, 'nik');
     }
 
     public function kerja () : HasMany {
-        return $this->hasMany(kerja::class);
+        return $this->hasMany(kerja::class, 'nik');
     }
 }

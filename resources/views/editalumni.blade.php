@@ -36,25 +36,25 @@
                             <h5 class="card-header">Edit Alumni</h5>
                             <!-- Account -->
                             <div class="card-body">
-                                <form method="POST" action="{{ route('alumni.update', $alumni->id) }}">
+                                <form method="POST" action="{{ route('alumni.update', $data_alumni->nik) }}">
                                     @csrf
                                     @method('PUT')
                                     <div class="row g-3">
-                                        <div class="mb-3 col-md-6">
-                                            <label for="nis" class="form-label">NIS</label>
-                                            <input type="text" class="form-control" id="nis" name="nis" value="{{ $alumni->nis }}" required>
-                                        </div>
+                                        {{-- <div class="mb-3 col-md-6">
+                                            <label for="nks" class="form-label">NIS</label>
+                                            <input type="text" class="form-control" id="nik" name="nik" value="{{ $data_alumni->nik }}" required>
+                                        </div> --}}
                                         <div class="mb-3 col-md-6">
                                             <label for="nama" class="form-label">Nama</label>
-                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $alumni->nama }}" required>
+                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $data_alumni->nama }}" required>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="jurusan" class="form-label">Jurusan</label>
-                                            <input type="text" class="form-control" id="jurusan" name="jurusan" value="{{ $alumni->jurusan }}" required>
+                                            <input type="text" class="form-control" id="jurusan" name="jurusan" value="{{ $data_alumni->jurusan }}" required>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="tahun_lulus" class="form-label">Tahun Lulus</label>
-                                            <input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus" value="{{ $alumni->tahun_lulus }}" required>
+                                            <input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus" value="{{ $data_alumni->tahun_lulus }}" required>
                                         </div>
                                     </div>
                                     <div class="mt-2">

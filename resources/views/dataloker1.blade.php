@@ -68,70 +68,40 @@
           </div>
           <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th style="width: 30%;">
-                            Posisi
-                          </th>
-                          <th style="width: 30%;">
-                            Waktu Publikasi
-                          </th>
-                          <th style="width: 50%;">
-                            Aksi
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1">
-                            Manager
-                          </td>
-                          <td>
-                            22-02-2024
-                          </td>
-                          <td>
-                            <a href="#" class="btn btn-primary btn-sm">Detail</a>
-                            <a href="tambahloker" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            Manager
-                          </td>
-                          <td>
-                            03-03-2024
-                          </td>
-                          <td>
-                            <a href="#" class="btn btn-primary btn-sm">Detail</a>
-                            <a href="tambahloker" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            Manager
-                          </td>
-                          <td>
-                            14-02-2024
-                          </td>
-                          <td>
-                            <a href="#" class="btn btn-primary btn-sm">Detail</a>
-                            <a href="tambahloker" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Posisi</th>
+                                        <th style="width: 30%;">Jenis Waktu Pekerjaan</th>
+                                        <th style="width: 50%;">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($perusahaan as $loker)
+                                    <tr>
+                                        <td class="py-1">{{ $loker->jabatan }}</td>
+                                        <td>{{ $loker->tanggal_akhir }}</td>
+                                        <td>
+                                              {{-- <a href="{{ route('loker.show', $loker->id_lowongan_pekerjaan) }}" class="btn btn-primary btn-sm">Detail</a>
+                                              <a href="{{ route('loker.edit', $loker->id_lowongan_pekerjaan) }}" class="btn btn-warning btn-sm">Edit</a>
+                                              <form action="{{ route('loker.destroy', $loker->id_lowongan_pekerjaan) }}" method="POST" style="display:inline;">
+                                                  @csrf
+                                                  @method('DELETE')
+                                                  <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                              </form> --}}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+      </div>
           
         
         <!-- row end -->

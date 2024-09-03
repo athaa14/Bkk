@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kerja', function (Blueprint $table) {
             $table->string('id_pengalaman_kerja')->primary();
-            $table->unsignedBigInteger('id_alumni');
+            $table->string('nik');
             $table->string('jabatan');
             $table->enum('jenis_waktu_pekerjaan',['Waktu Kerja Standar (Full-Time)','Waktu Kerja Paruh Waktu (Part-Time)','Waktu Kerja Fleksibel (Flexible Hours)','Shift Kerja (Shift Work)','Waktu Kerja Bergilir (Rotating Shift)','Waktu Kerja Jarak Jauh (Remote Work)','Waktu Kerja Kontrak (Contract Work)','Waktu Kerja Proyek(Project-Based work)','Waktu Kerja Tidak Teratur (Irreguler Hours)','Waktu Kerja Sementara (Temporary Work)']);
             $table->string('nama_perusahaan');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('id_alumni')->references('id')->on('alumni')->onDelete('cascade');
+            $table->foreign('nik')->references('nik')->on('alumni')->onDelete('cascade');
         });
     }
 
